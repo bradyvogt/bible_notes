@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bible Notes</title>
+</head>
+<body>
+
+<h1>Welcome to Bible Notes.</h1>
+<p>This is a test web application to see if bible reference links work well.
+	<a class="rtBibleRef" href="https://biblia.com/bible/esv/Prov%206.16-19" data-reference="Prov 6.16-19" data-version="nlt" data-purpose="bible-reference" target="_blank" rel="noopener">Proverbs 6:16-19</a>
+</p>
+<a class="rtBibleRef" href="https://biblia.com/bible/esv/Prov%206.16-19" data-reference="Prov 6.16-19" data-version="nlt" data-purpose="bible-reference" target="_blank" rel="noopener">Proverbs 6:16-19</a>
+
+<script>
+	var refTagger = {
+		settings: {
+			bibleVersion: "NLT",			
+			socialSharing: ["google"],
+			customStyle : {
+				heading: {
+					backgroundColor : "#ffffff",
+					color : "#000000"
+				},
+				body   : {
+					color : "#000000"
+				}
+			}
+		}
+	};
+	(function(d, t) {
+		var n=d.querySelector("[nonce]");
+		refTagger.settings.nonce = n && (n.nonce||n.getAttribute("nonce"));
+		var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+		g.src = "https://api.reftagger.com/v2/RefTagger.js";
+		g.nonce = refTagger.settings.nonce;
+		s.parentNode.insertBefore(g, s);
+	}(document, "script"));
+</script>
+</body>
+</html>
